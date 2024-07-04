@@ -22,6 +22,7 @@ class ModeSelectionRow: UITableViewCell, ReuseIdentifier, ViewCode {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -30,7 +31,6 @@ class ModeSelectionRow: UITableViewCell, ReuseIdentifier, ViewCode {
     
     lazy var text: UILabel = {
         let v = UILabel()
-        v.text = "Banana"
         v.translatesAutoresizingMaskIntoConstraints = false
         
         return v

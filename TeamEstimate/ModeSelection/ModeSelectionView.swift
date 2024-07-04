@@ -8,8 +8,23 @@
 import UIKit
 
 class ModeSelectionView: UIViewController, ViewCode {
+    enum Modes: Int, CaseIterable {
+        case tShirt
+        case fibonacci
+        
+        var description: String {
+            switch self {
+            case .tShirt:
+                "T-Shirt"
+            case .fibonacci:
+                "Fibonacci"
+            }
+        }
+    }
     
-    let modes: [String] = ["T-Shirt", "Fibonacci"]
+    lazy var modes: [String] = {
+        return Modes.allCases.map { $0.description }
+    }()
     
     // TODO: add property wrapper for lazy var translatesAutoresizingMaskIntoConstraints
     lazy var modesList: UIView = {
@@ -57,6 +72,15 @@ extension ModeSelectionView: UITableViewDataSource {
 
 extension ModeSelectionView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        switch indexPath.row {
+        case Modes.tShirt.rawValue:
+            let vc = TShirtCardView(viewModel: TShirtCardsViewModel())
+            navigationController?.pushViewController(vc, animated: true)
+        case Modes.fibonacci.rawValue:
+            let vc = FibonacciCardsView(viewModel: FibonacciCardsViewModel())
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 }
