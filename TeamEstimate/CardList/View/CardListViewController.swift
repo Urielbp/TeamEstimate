@@ -1,5 +1,5 @@
 //
-//  CardList.swift
+//  CardListViewController.swift
 //  TeamEstimate
 //
 //  Created by Uriel Barbosa Pinheiro on 03/07/24.
@@ -7,19 +7,16 @@
 
 import UIKit
 
-protocol CardListViewModel {
-    var cards: [String] { get }
-}
-
-class CardList: UIViewController, ViewCode {
+class CardListViewController: UIViewController, ViewCode {
     
     var viewModel: CardListViewModel
+    weak var cardListcoordinator: CardListCoordinator?
     
     // TODO: add property wrapper for lazy var translatesAutoresizingMaskIntoConstraints
     lazy var cardList: UITableView = {
         let v = UITableView(frame: .zero)
         
-        v.register(ModeSelectionRow.self, forCellReuseIdentifier: ModeSelectionRow.reuseIdentifier)
+        v.register(CellRow.self, forCellReuseIdentifier: CellRow.reuseIdentifier)
         v.dataSource = self
         v.delegate = self
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -55,22 +52,20 @@ class CardList: UIViewController, ViewCode {
     }
 }
 
-extension CardList: UITableViewDataSource {
+extension CardListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ModeSelectionRow.reuseIdentifier) as? ModeSelectionRow else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellRow.reuseIdentifier) as? CellRow else { return UITableViewCell() }
         cell.text.text = viewModel.cards[indexPath.row]
         return cell
     }
 }
 
-extension CardList: UITableViewDelegate {
+extension CardListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CardDetailView()
-        vc.displayLabel.text = viewModel.cards[indexPath.row]
-        navigationController?.present(vc, animated: true)
+        cardListcoordinator?.startCardDetail(text: viewModel.cards[indexPath.row])
     }
 }

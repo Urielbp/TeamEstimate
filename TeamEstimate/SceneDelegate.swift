@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
+    var coordinator: MainCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -25,9 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
-        let vc = ModeSelectionView()
-        let nav = UINavigationController(rootViewController: vc)
+        
+        let nav = UINavigationController()
         nav.navigationBar.prefersLargeTitles = true
+        
+        let mainCoordinator = MainCoordinator(navigationController: nav)
+        self.coordinator = mainCoordinator
+        mainCoordinator.start()
+        
         window?.rootViewController = nav
         guard let _ = (scene as? UIWindowScene) else { return }
     }

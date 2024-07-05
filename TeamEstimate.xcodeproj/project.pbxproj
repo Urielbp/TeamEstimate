@@ -9,20 +9,26 @@
 /* Begin PBXBuildFile section */
 		0805BC3B2C35F60F00DB9CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC3A2C35F60F00DB9CBC /* AppDelegate.swift */; };
 		0805BC3D2C35F60F00DB9CBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC3C2C35F60F00DB9CBC /* SceneDelegate.swift */; };
-		0805BC3F2C35F60F00DB9CBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC3E2C35F60F00DB9CBC /* ViewController.swift */; };
 		0805BC442C35F61000DB9CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0805BC432C35F61000DB9CBC /* Assets.xcassets */; };
 		0805BC472C35F61000DB9CBC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0805BC462C35F61000DB9CBC /* Base */; };
 		0805BC522C35F61100DB9CBC /* TeamEstimateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC512C35F61100DB9CBC /* TeamEstimateTests.swift */; };
 		0805BC5C2C35F61100DB9CBC /* TeamEstimateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC5B2C35F61100DB9CBC /* TeamEstimateUITests.swift */; };
 		0805BC5E2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC5D2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift */; };
-		0805BC6B2C35F7C200DB9CBC /* ModeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC6A2C35F7C200DB9CBC /* ModeSelectionView.swift */; };
+		0805BC6B2C35F7C200DB9CBC /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC6A2C35F7C200DB9CBC /* ModeSelectionViewController.swift */; };
+		0833C4612C371F19004E13D0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4602C371F19004E13D0 /* MainCoordinator.swift */; };
+		0833C4632C37540D004E13D0 /* TShirtGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4622C37540D004E13D0 /* TShirtGameCoordinator.swift */; };
+		0833C4662C375801004E13D0 /* CardDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4652C375801004E13D0 /* CardDetailCoordinator.swift */; };
+		0833C4682C376596004E13D0 /* CardListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4672C376596004E13D0 /* CardListCoordinator.swift */; };
+		0833C46B2C377133004E13D0 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C46A2C377133004E13D0 /* CardListViewModel.swift */; };
+		08D30C312C370B8C0041ADA8 /* FibonacciGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D30C302C370B8C0041ADA8 /* FibonacciGameCoordinator.swift */; };
+		08D30C332C370C400041ADA8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D30C322C370C400041ADA8 /* Coordinator.swift */; };
 		08FBCB052C35FECC00467AD8 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB042C35FECC00467AD8 /* ViewCode.swift */; };
 		08FBCB072C35FEE900467AD8 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB062C35FEE900467AD8 /* ReuseIdentifier.swift */; };
-		08FBCB0A2C3600CF00467AD8 /* ModeSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB092C3600CF00467AD8 /* ModeSelectionRow.swift */; };
-		08FBCB0D2C36079100467AD8 /* FibonacciCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB0C2C36079100467AD8 /* FibonacciCardsView.swift */; };
-		08FBCB112C36124700467AD8 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB102C36124700467AD8 /* CardDetailView.swift */; };
-		08FBCB142C3632A100467AD8 /* TShirtCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB132C3632A100467AD8 /* TShirtCardView.swift */; };
-		08FBCB182C3632DF00467AD8 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB172C3632DF00467AD8 /* CardList.swift */; };
+		08FBCB0A2C3600CF00467AD8 /* CellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB092C3600CF00467AD8 /* CellRow.swift */; };
+		08FBCB0D2C36079100467AD8 /* FibonacciCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB0C2C36079100467AD8 /* FibonacciCardsViewController.swift */; };
+		08FBCB112C36124700467AD8 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB102C36124700467AD8 /* CardDetailViewController.swift */; };
+		08FBCB142C3632A100467AD8 /* TShirtCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB132C3632A100467AD8 /* TShirtCardViewController.swift */; };
+		08FBCB182C3632DF00467AD8 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB172C3632DF00467AD8 /* CardListViewController.swift */; };
 		08FBCB1A2C3636E700467AD8 /* FibonacciCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB192C3636E700467AD8 /* FibonacciCardsViewModel.swift */; };
 		08FBCB1C2C36385900467AD8 /* TShirtCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB1B2C36385900467AD8 /* TShirtCardsViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -48,7 +54,6 @@
 		0805BC372C35F60F00DB9CBC /* TeamEstimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamEstimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0805BC3A2C35F60F00DB9CBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0805BC3C2C35F60F00DB9CBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0805BC3E2C35F60F00DB9CBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0805BC432C35F61000DB9CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0805BC462C35F61000DB9CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0805BC482C35F61000DB9CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,14 +62,21 @@
 		0805BC572C35F61100DB9CBC /* TeamEstimateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamEstimateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0805BC5B2C35F61100DB9CBC /* TeamEstimateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEstimateUITests.swift; sourceTree = "<group>"; };
 		0805BC5D2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEstimateUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0805BC6A2C35F7C200DB9CBC /* ModeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionView.swift; sourceTree = "<group>"; };
+		0805BC6A2C35F7C200DB9CBC /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
+		0833C4602C371F19004E13D0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		0833C4622C37540D004E13D0 /* TShirtGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtGameCoordinator.swift; sourceTree = "<group>"; };
+		0833C4652C375801004E13D0 /* CardDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailCoordinator.swift; sourceTree = "<group>"; };
+		0833C4672C376596004E13D0 /* CardListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCoordinator.swift; sourceTree = "<group>"; };
+		0833C46A2C377133004E13D0 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
+		08D30C302C370B8C0041ADA8 /* FibonacciGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciGameCoordinator.swift; sourceTree = "<group>"; };
+		08D30C322C370C400041ADA8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		08FBCB042C35FECC00467AD8 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		08FBCB062C35FEE900467AD8 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
-		08FBCB092C3600CF00467AD8 /* ModeSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionRow.swift; sourceTree = "<group>"; };
-		08FBCB0C2C36079100467AD8 /* FibonacciCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciCardsView.swift; sourceTree = "<group>"; };
-		08FBCB102C36124700467AD8 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
-		08FBCB132C3632A100467AD8 /* TShirtCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtCardView.swift; sourceTree = "<group>"; };
-		08FBCB172C3632DF00467AD8 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
+		08FBCB092C3600CF00467AD8 /* CellRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRow.swift; sourceTree = "<group>"; };
+		08FBCB0C2C36079100467AD8 /* FibonacciCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciCardsViewController.swift; sourceTree = "<group>"; };
+		08FBCB102C36124700467AD8 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		08FBCB132C3632A100467AD8 /* TShirtCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtCardViewController.swift; sourceTree = "<group>"; };
+		08FBCB172C3632DF00467AD8 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		08FBCB192C3636E700467AD8 /* FibonacciCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciCardsViewModel.swift; sourceTree = "<group>"; };
 		08FBCB1B2C36385900467AD8 /* TShirtCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtCardsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +129,7 @@
 		0805BC392C35F60F00DB9CBC /* TeamEstimate */ = {
 			isa = PBXGroup;
 			children = (
+				08D30C2F2C370B470041ADA8 /* CellRow */,
 				08FBCB162C3632C800467AD8 /* CardList */,
 				08FBCB152C3632BC00467AD8 /* CardDetail */,
 				08FBCB122C36329100467AD8 /* TShirt */,
@@ -124,8 +137,8 @@
 				08FBCB082C3600B600467AD8 /* ModeSelection */,
 				08FBCB032C35FEB400467AD8 /* Protocols */,
 				0805BC3A2C35F60F00DB9CBC /* AppDelegate.swift */,
+				0833C4602C371F19004E13D0 /* MainCoordinator.swift */,
 				0805BC3C2C35F60F00DB9CBC /* SceneDelegate.swift */,
-				0805BC3E2C35F60F00DB9CBC /* ViewController.swift */,
 				0805BC432C35F61000DB9CBC /* Assets.xcassets */,
 				0805BC452C35F61000DB9CBC /* LaunchScreen.storyboard */,
 				0805BC482C35F61000DB9CBC /* Info.plist */,
@@ -150,11 +163,84 @@
 			path = TeamEstimateUITests;
 			sourceTree = "<group>";
 		};
+		0833C4642C3757D0004E13D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08FBCB102C36124700467AD8 /* CardDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0833C4692C377125004E13D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08FBCB172C3632DF00467AD8 /* CardListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0833C46C2C3775E1004E13D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0833C46A2C377133004E13D0 /* CardListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		08D30C2A2C3709950041ADA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08FBCB132C3632A100467AD8 /* TShirtCardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08D30C2B2C3709B80041ADA8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				08FBCB1B2C36385900467AD8 /* TShirtCardsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		08D30C2C2C3709E20041ADA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				08FBCB0C2C36079100467AD8 /* FibonacciCardsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08D30C2D2C3709E80041ADA8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				08FBCB192C3636E700467AD8 /* FibonacciCardsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		08D30C2E2C370B200041ADA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0805BC6A2C35F7C200DB9CBC /* ModeSelectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		08D30C2F2C370B470041ADA8 /* CellRow */ = {
+			isa = PBXGroup;
+			children = (
+				08FBCB092C3600CF00467AD8 /* CellRow.swift */,
+			);
+			path = CellRow;
+			sourceTree = "<group>";
+		};
 		08FBCB032C35FEB400467AD8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				08FBCB042C35FECC00467AD8 /* ViewCode.swift */,
 				08FBCB062C35FEE900467AD8 /* ReuseIdentifier.swift */,
+				08D30C322C370C400041ADA8 /* Coordinator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -162,8 +248,7 @@
 		08FBCB082C3600B600467AD8 /* ModeSelection */ = {
 			isa = PBXGroup;
 			children = (
-				0805BC6A2C35F7C200DB9CBC /* ModeSelectionView.swift */,
-				08FBCB092C3600CF00467AD8 /* ModeSelectionRow.swift */,
+				08D30C2E2C370B200041ADA8 /* View */,
 			);
 			path = ModeSelection;
 			sourceTree = "<group>";
@@ -171,8 +256,9 @@
 		08FBCB0B2C36076C00467AD8 /* Fibonacci */ = {
 			isa = PBXGroup;
 			children = (
-				08FBCB0C2C36079100467AD8 /* FibonacciCardsView.swift */,
-				08FBCB192C3636E700467AD8 /* FibonacciCardsViewModel.swift */,
+				08D30C2D2C3709E80041ADA8 /* ViewModel */,
+				08D30C2C2C3709E20041ADA8 /* View */,
+				08D30C302C370B8C0041ADA8 /* FibonacciGameCoordinator.swift */,
 			);
 			path = Fibonacci;
 			sourceTree = "<group>";
@@ -180,8 +266,9 @@
 		08FBCB122C36329100467AD8 /* TShirt */ = {
 			isa = PBXGroup;
 			children = (
-				08FBCB132C3632A100467AD8 /* TShirtCardView.swift */,
-				08FBCB1B2C36385900467AD8 /* TShirtCardsViewModel.swift */,
+				08D30C2B2C3709B80041ADA8 /* ViewModel */,
+				08D30C2A2C3709950041ADA8 /* View */,
+				0833C4622C37540D004E13D0 /* TShirtGameCoordinator.swift */,
 			);
 			path = TShirt;
 			sourceTree = "<group>";
@@ -189,7 +276,8 @@
 		08FBCB152C3632BC00467AD8 /* CardDetail */ = {
 			isa = PBXGroup;
 			children = (
-				08FBCB102C36124700467AD8 /* CardDetailView.swift */,
+				0833C4642C3757D0004E13D0 /* View */,
+				0833C4652C375801004E13D0 /* CardDetailCoordinator.swift */,
 			);
 			path = CardDetail;
 			sourceTree = "<group>";
@@ -197,7 +285,9 @@
 		08FBCB162C3632C800467AD8 /* CardList */ = {
 			isa = PBXGroup;
 			children = (
-				08FBCB172C3632DF00467AD8 /* CardList.swift */,
+				0833C46C2C3775E1004E13D0 /* ViewModel */,
+				0833C4692C377125004E13D0 /* View */,
+				0833C4672C376596004E13D0 /* CardListCoordinator.swift */,
 			);
 			path = CardList;
 			sourceTree = "<group>";
@@ -332,18 +422,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08FBCB112C36124700467AD8 /* CardDetailView.swift in Sources */,
-				08FBCB182C3632DF00467AD8 /* CardList.swift in Sources */,
-				0805BC6B2C35F7C200DB9CBC /* ModeSelectionView.swift in Sources */,
-				08FBCB0D2C36079100467AD8 /* FibonacciCardsView.swift in Sources */,
+				08FBCB112C36124700467AD8 /* CardDetailViewController.swift in Sources */,
+				08FBCB182C3632DF00467AD8 /* CardListViewController.swift in Sources */,
+				0833C4632C37540D004E13D0 /* TShirtGameCoordinator.swift in Sources */,
+				0805BC6B2C35F7C200DB9CBC /* ModeSelectionViewController.swift in Sources */,
+				08FBCB0D2C36079100467AD8 /* FibonacciCardsViewController.swift in Sources */,
 				08FBCB072C35FEE900467AD8 /* ReuseIdentifier.swift in Sources */,
-				08FBCB142C3632A100467AD8 /* TShirtCardView.swift in Sources */,
-				08FBCB0A2C3600CF00467AD8 /* ModeSelectionRow.swift in Sources */,
+				08FBCB142C3632A100467AD8 /* TShirtCardViewController.swift in Sources */,
+				08D30C332C370C400041ADA8 /* Coordinator.swift in Sources */,
+				0833C4662C375801004E13D0 /* CardDetailCoordinator.swift in Sources */,
+				08FBCB0A2C3600CF00467AD8 /* CellRow.swift in Sources */,
+				0833C4682C376596004E13D0 /* CardListCoordinator.swift in Sources */,
 				08FBCB052C35FECC00467AD8 /* ViewCode.swift in Sources */,
-				0805BC3F2C35F60F00DB9CBC /* ViewController.swift in Sources */,
 				0805BC3B2C35F60F00DB9CBC /* AppDelegate.swift in Sources */,
+				0833C46B2C377133004E13D0 /* CardListViewModel.swift in Sources */,
 				0805BC3D2C35F60F00DB9CBC /* SceneDelegate.swift in Sources */,
 				08FBCB1A2C3636E700467AD8 /* FibonacciCardsViewModel.swift in Sources */,
+				08D30C312C370B8C0041ADA8 /* FibonacciGameCoordinator.swift in Sources */,
+				0833C4612C371F19004E13D0 /* MainCoordinator.swift in Sources */,
 				08FBCB1C2C36385900467AD8 /* TShirtCardsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

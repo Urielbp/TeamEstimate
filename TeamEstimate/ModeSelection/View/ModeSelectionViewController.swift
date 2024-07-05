@@ -1,5 +1,5 @@
 //
-//  ModeSelectionView.swift
+//  ModeSelectionViewController.swift
 //  TeamEstimate
 //
 //  Created by Uriel Barbosa Pinheiro on 03/07/24.
@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ModeSelectionView: UIViewController, ViewCode {
+class ModeSelectionViewController: UIViewController, ViewCode {
+    
+    weak var coordinator: MainCoordinator?
+    
     enum Modes: Int, CaseIterable {
         case tShirt
         case fibonacci
@@ -30,7 +33,7 @@ class ModeSelectionView: UIViewController, ViewCode {
     lazy var modesList: UIView = {
         let v = UITableView(frame: .zero)
         
-        v.register(ModeSelectionRow.self, forCellReuseIdentifier: ModeSelectionRow.reuseIdentifier)
+        v.register(CellRow.self, forCellReuseIdentifier: CellRow.reuseIdentifier)
         v.dataSource = self
         v.delegate = self
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -58,27 +61,25 @@ class ModeSelectionView: UIViewController, ViewCode {
     }
 }
 
-extension ModeSelectionView: UITableViewDataSource {
+extension ModeSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return modes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ModeSelectionRow.reuseIdentifier) as? ModeSelectionRow else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellRow.reuseIdentifier) as? CellRow else { return UITableViewCell() }
         cell.text.text = modes[indexPath.row]
         return cell
     }
 }
 
-extension ModeSelectionView: UITableViewDelegate {
+extension ModeSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case Modes.tShirt.rawValue:
-            let vc = TShirtCardView(viewModel: TShirtCardsViewModel())
-            navigationController?.pushViewController(vc, animated: true)
+            coordinator?.startTShirt()
         case Modes.fibonacci.rawValue:
-            let vc = FibonacciCardsView(viewModel: FibonacciCardsViewModel())
-            navigationController?.pushViewController(vc, animated: true)
+            coordinator?.startFibonacci()
         default:
             break
         }

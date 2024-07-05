@@ -1,5 +1,5 @@
 //
-//  CardDetailView.swift
+//  CardDetailViewController.swift
 //  TeamEstimate
 //
 //  Created by Uriel Barbosa Pinheiro on 03/07/24.
@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CardDetailView: UIViewController, ViewCode {
+class CardDetailViewController: UIViewController, ViewCode {
+    
+    weak var coordinator: CardDetailCoordinator?
     
     // TODO: add property wrapper for lazy var translatesAutoresizingMaskIntoConstraints
     lazy var displayLabel: UILabel = {
@@ -84,5 +86,9 @@ class CardDetailView: UIViewController, ViewCode {
         view.backgroundColor = .white
         self.backCardView.alpha = 1
         self.frontCardView.alpha = 0
+    }
+    
+    deinit {
+        coordinator?.finish()
     }
 }

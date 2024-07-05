@@ -1,5 +1,5 @@
 //
-//  ModeSelectionRow.swift
+//  CellRow.swift
 //  TeamEstimate
 //
 //  Created by Uriel Barbosa Pinheiro on 03/07/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ModeSelectionRow: UITableViewCell, ReuseIdentifier, ViewCode {
+class CellRow: UITableViewCell, ReuseIdentifier, ViewCode {
     func setupHierarchy() {
         contentView.addSubview(text)
     }
