@@ -12,20 +12,21 @@ class CardListViewController: UIViewController, ViewCode {
     var viewModel: CardListViewModel
     weak var cardListcoordinator: CardListCoordinator?
     
-    // TODO: add property wrapper for lazy var translatesAutoresizingMaskIntoConstraints
-    lazy var cardList: UITableView = {
+    @AutoLayoutView
+    var cardList: UITableView = {
         let v = UITableView(frame: .zero)
         
         v.register(CellRow.self, forCellReuseIdentifier: CellRow.reuseIdentifier)
-        v.dataSource = self
-        v.delegate = self
-        v.translatesAutoresizingMaskIntoConstraints = false
-        
         return v
     }()
     
     func setupHierarchy() {
         view.addSubview(cardList)
+    }
+    
+    func setupDelegates() {
+        cardList.dataSource = self
+        cardList.delegate = self
     }
     
     func setupConstraints() {
@@ -35,6 +36,12 @@ class CardListViewController: UIViewController, ViewCode {
             cardList.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             cardList.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    func setup() {
+        setupHierarchy()
+        setupConstraints()
+        setupDelegates()
     }
     
     override func viewDidLoad() {

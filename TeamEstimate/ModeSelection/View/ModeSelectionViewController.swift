@@ -29,14 +29,10 @@ class ModeSelectionViewController: UIViewController, ViewCode {
         return Modes.allCases.map { $0.description }
     }()
     
-    // TODO: add property wrapper for lazy var translatesAutoresizingMaskIntoConstraints
-    lazy var modesList: UIView = {
+    @AutoLayoutView
+    var modesList: UITableView = {
         let v = UITableView(frame: .zero)
-        
         v.register(CellRow.self, forCellReuseIdentifier: CellRow.reuseIdentifier)
-        v.dataSource = self
-        v.delegate = self
-        v.translatesAutoresizingMaskIntoConstraints = false
         
         return v
     }()
@@ -52,6 +48,17 @@ class ModeSelectionViewController: UIViewController, ViewCode {
             modesList.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             modesList.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    func setupDelegates() {
+        modesList.dataSource = self
+        modesList.delegate = self
+    }
+    
+    func setup() {
+        setupHierarchy()
+        setupConstraints()
+        setupDelegates()
     }
     
     override func viewDidLoad() {

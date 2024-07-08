@@ -11,12 +11,10 @@ class CardDetailViewController: UIViewController, ViewCode {
     
     weak var coordinator: CardDetailCoordinator?
     
-    // TODO: add property wrapper for lazy var translatesAutoresizingMaskIntoConstraints
-    lazy var displayLabel: UILabel = {
+    @AutoLayoutView
+    var displayLabel: UILabel = {
         let v = UILabel(frame: .zero)
-        
         v.font = UIFont.systemFont(ofSize: 64)
-        v.translatesAutoresizingMaskIntoConstraints = false
         
         return v
     }()
@@ -42,7 +40,7 @@ class CardDetailViewController: UIViewController, ViewCode {
         return v
     }()
     
-    lazy var backCardTipLabel: UILabel = {
+    var backCardTipLabel: UILabel = {
         let v = UILabel(frame: .zero)
         v.text = "Tap to show card"
         // TODO: make accessible
