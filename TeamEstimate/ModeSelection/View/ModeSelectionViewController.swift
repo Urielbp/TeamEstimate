@@ -10,24 +10,7 @@ import UIKit
 class ModeSelectionViewController: UIViewController, ViewCode {
     
     weak var coordinator: MainCoordinator?
-    
-    enum Modes: Int, CaseIterable {
-        case tShirt
-        case fibonacci
-        
-        var description: String {
-            switch self {
-            case .tShirt:
-                "T-Shirt"
-            case .fibonacci:
-                "Fibonacci"
-            }
-        }
-    }
-    
-    lazy var modes: [String] = {
-        return Modes.allCases.map { $0.description }
-    }()
+    var viewModel: ModeSelectionViewModel
     
     @AutoLayoutView
     var modesList: UITableView = {
@@ -61,6 +44,16 @@ class ModeSelectionViewController: UIViewController, ViewCode {
         setupDelegates()
     }
     
+    init(coordinator: MainCoordinator, viewModel: ModeSelectionViewModel) {
+        self.coordinator = coordinator
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -70,25 +63,20 @@ class ModeSelectionViewController: UIViewController, ViewCode {
 
 extension ModeSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return modes.count
+        return viewModel.modes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellRow.reuseIdentifier) as? CellRow else { return UITableViewCell() }
-        cell.text.text = modes[indexPath.row]
+        cell.text.text = viewModel.modes[indexPath.row]
         return cell
     }
 }
 
 extension ModeSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case Modes.tShirt.rawValue:
-            coordinator?.startTShirt()
-        case Modes.fibonacci.rawValue:
-            coordinator?.startFibonacci()
-        default:
-            break
-        }
+        guard let gameMode = ModeSelectionViewModel.Mode(rawValue: indexPath.row) else { return }
+        
+        coordinator?.startGameMode(gameMode)
     }
 }

@@ -18,13 +18,23 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = ModeSelectionViewController()
+        let vm = ModeSelectionViewModel()
+        let vc = ModeSelectionViewController(coordinator: self, viewModel: vm)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
 }
 
 extension MainCoordinator {
+    func startGameMode(_ mode: ModeSelectionViewModel.Mode) {
+        switch mode {
+        case .tShirt:
+            startTShirt()
+        case .fibonacci:
+            startFibonacci()
+        }
+    }
+    
     func startFibonacci() {
         let coordinator = FibonacciGameCoordinator(navigationController: navigationController, parentCoordinator: self)
         childCoordinators.append(coordinator)

@@ -15,6 +15,7 @@
 		0805BC5C2C35F61100DB9CBC /* TeamEstimateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC5B2C35F61100DB9CBC /* TeamEstimateUITests.swift */; };
 		0805BC5E2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC5D2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift */; };
 		0805BC6B2C35F7C200DB9CBC /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC6A2C35F7C200DB9CBC /* ModeSelectionViewController.swift */; };
+		080C0A972C3BE8F200414744 /* ModeSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C0A962C3BE8F200414744 /* ModeSelectionViewModel.swift */; };
 		0833C4612C371F19004E13D0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4602C371F19004E13D0 /* MainCoordinator.swift */; };
 		0833C4632C37540D004E13D0 /* TShirtGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4622C37540D004E13D0 /* TShirtGameCoordinator.swift */; };
 		0833C4662C375801004E13D0 /* CardDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4652C375801004E13D0 /* CardDetailCoordinator.swift */; };
@@ -63,6 +64,7 @@
 		0805BC5B2C35F61100DB9CBC /* TeamEstimateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEstimateUITests.swift; sourceTree = "<group>"; };
 		0805BC5D2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEstimateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0805BC6A2C35F7C200DB9CBC /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
+		080C0A962C3BE8F200414744 /* ModeSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewModel.swift; sourceTree = "<group>"; };
 		0833C4602C371F19004E13D0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		0833C4622C37540D004E13D0 /* TShirtGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtGameCoordinator.swift; sourceTree = "<group>"; };
 		0833C4652C375801004E13D0 /* CardDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailCoordinator.swift; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			path = TeamEstimateUITests;
 			sourceTree = "<group>";
 		};
+		080C0A952C3BE8E100414744 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				080C0A962C3BE8F200414744 /* ModeSelectionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0833C4642C3757D0004E13D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +258,7 @@
 		08FBCB082C3600B600467AD8 /* ModeSelection */ = {
 			isa = PBXGroup;
 			children = (
+				080C0A952C3BE8E100414744 /* ViewModel */,
 				08D30C2E2C370B200041ADA8 /* View */,
 			);
 			path = ModeSelection;
@@ -432,6 +443,7 @@
 				08D30C332C370C400041ADA8 /* Coordinator.swift in Sources */,
 				0833C4662C375801004E13D0 /* CardDetailCoordinator.swift in Sources */,
 				08FBCB0A2C3600CF00467AD8 /* CellRow.swift in Sources */,
+				080C0A972C3BE8F200414744 /* ModeSelectionViewModel.swift in Sources */,
 				0833C4682C376596004E13D0 /* CardListCoordinator.swift in Sources */,
 				08FBCB052C35FECC00467AD8 /* ViewCode.swift in Sources */,
 				0805BC3B2C35F60F00DB9CBC /* AppDelegate.swift in Sources */,
