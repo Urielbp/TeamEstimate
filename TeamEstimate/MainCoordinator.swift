@@ -20,7 +20,6 @@ class MainCoordinator: Coordinator {
     func start() {
         let vm = ModeSelectionViewModel()
         let vc = ModeSelectionViewController(coordinator: self, viewModel: vm)
-        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
 }

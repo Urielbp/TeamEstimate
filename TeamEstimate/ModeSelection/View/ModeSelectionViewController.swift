@@ -9,16 +9,42 @@ import UIKit
 
 class ModeSelectionViewController: UIViewController, ViewCode {
     
-    weak var coordinator: MainCoordinator?
-    var viewModel: ModeSelectionViewModel
+    // MARK: - Private Properties
+    
+    private weak var coordinator: MainCoordinator?
+    private var viewModel: ModeSelectionViewModel
     
     @AutoLayoutView
-    var modesList: UITableView = {
+    private var modesList: UITableView = {
         let v = UITableView(frame: .zero)
         v.register(CellRow.self, forCellReuseIdentifier: CellRow.reuseIdentifier)
         
         return v
     }()
+    
+    // MARK: - Initialization
+    
+    init(coordinator: MainCoordinator, viewModel: ModeSelectionViewModel) {
+        self.coordinator = coordinator
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        setupHierarchy()
+        setupConstraints()
+        setupDelegates()
+    }
+    
+    // MARK: - Setup Methods
     
     func setupHierarchy() {
         view.addSubview(modesList)
@@ -42,31 +68,10 @@ class ModeSelectionViewController: UIViewController, ViewCode {
         view.backgroundColor = UIColor.background
         modesList.backgroundColor = UIColor.background
         setLargeTitleColor(UIColor.text)
-        title = "Mode Selection"
-    }
-    
-    func setup() {
-        setupHierarchy()
-        setupConstraints()
-        setupDelegates()
-        setupView()
-    }
-    
-    init(coordinator: MainCoordinator, viewModel: ModeSelectionViewModel) {
-        self.coordinator = coordinator
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension ModeSelectionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,6 +88,8 @@ extension ModeSelectionViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension ModeSelectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let gameMode = ModeSelectionViewModel.Mode(rawValue: indexPath.row) else { return }
@@ -90,3 +97,4 @@ extension ModeSelectionViewController: UITableViewDelegate {
         coordinator?.startGameMode(gameMode)
     }
 }
+

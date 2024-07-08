@@ -9,6 +9,8 @@ import Foundation
 
 class ModeSelectionViewModel {
     
+    // MARK: - Enums
+    
     enum Mode: Int, CaseIterable {
         case tShirt
         case fibonacci
@@ -16,14 +18,16 @@ class ModeSelectionViewModel {
         var description: String {
             switch self {
             case .tShirt:
-                "T-Shirt"
+                return "T-Shirt"
             case .fibonacci:
-                "Fibonacci"
+                return "Fibonacci"
             }
         }
     }
     
+    // MARK: - Internal Properties
+    
     lazy var modes: [String] = {
-        return Mode.allCases.map { $0.description }
+        Mode.allCases.map { $0.description }
     }()
 }

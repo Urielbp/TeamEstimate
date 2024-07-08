@@ -16,4 +16,17 @@ class TShirtCardViewController: CardListViewController {
         setup()
         title = "T-Shirt"
     }
+    
+    init(cardListViewModel: CardListViewModel, cardListCoordinator: CardListCoordinator, coordinator: TShirtGameCoordinator) {
+        self.coordinator = coordinator
+        super.init(viewModel: cardListViewModel, cardListcoordinator: cardListCoordinator)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        coordinator?.finish()
+    }
 }

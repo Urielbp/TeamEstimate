@@ -9,22 +9,30 @@ import UIKit
 
 class TShirtGameCoordinator: Coordinator {
     
+    // MARK: - Internal Properties
+    
     var childCoordinators = [Coordinator]()
     weak var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
+    
+    // MARK: - Initialization
     
     init(navigationController: UINavigationController, parentCoordinator: Coordinator) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
     }
     
+    // MARK: - Coordinator lifecycle
+    
     func start() {
-        let vc = TShirtCardViewController(viewModel: TShirtCardsViewModel())
-        vc.cardListcoordinator = self
+        let vm = TShirtCardsViewModel()
+        let vc = TShirtCardViewController(cardListViewModel: vm, cardListCoordinator: self, coordinator: self)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
 }
+
+// MARK: - CardListCoordinator
 
 extension TShirtGameCoordinator: CardListCoordinator {
     func startCardDetail(text: String) {

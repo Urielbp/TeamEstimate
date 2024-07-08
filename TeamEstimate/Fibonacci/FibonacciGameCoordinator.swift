@@ -8,23 +8,30 @@
 import UIKit
 
 class FibonacciGameCoordinator: Coordinator {
+        
+    // MARK: - Internal Properties
     
-    var childCoordinators = [Coordinator]()
     weak var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
+    var childCoordinators = [Coordinator]()
+    
+    // MARK: - Initialization
     
     init(navigationController: UINavigationController, parentCoordinator: Coordinator) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
     }
     
+    // MARK: - Coordinator lifecycle
+    
     func start() {
-        let vc = FibonacciCardsViewController(viewModel: FibonacciCardsViewModel())
-        vc.cardListcoordinator = self
-        vc.coordinator = self
+        let vm = FibonacciCardsViewModel()
+        let vc = FibonacciCardsViewController(cardListViewModel: vm, cardListCoordinator: self, coordinator: self)
         navigationController.pushViewController(vc, animated: true)
     }
 }
+
+// MARK: - CardListCoordinator
 
 extension FibonacciGameCoordinator: CardListCoordinator {
     func startCardDetail(text: String) {

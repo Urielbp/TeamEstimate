@@ -4,21 +4,41 @@
 //
 //  Created by Uriel Barbosa Pinheiro on 03/07/24.
 //
-
 import UIKit
 
 class CardListViewController: UIViewController, ViewCode {
     
-    var viewModel: CardListViewModel
-    weak var cardListcoordinator: CardListCoordinator?
+    // MARK: - Private Properties
     
-    @AutoLayoutView
-    var cardList: UITableView = {
+    private var viewModel: CardListViewModel
+    @AutoLayoutView private var cardList: UITableView = {
         let v = UITableView(frame: .zero)
-        
         v.register(CellRow.self, forCellReuseIdentifier: CellRow.reuseIdentifier)
         return v
     }()
+    
+    private weak var cardListcoordinator: CardListCoordinator?
+    
+    // MARK: - Initialization
+    
+    init(viewModel: CardListViewModel, cardListcoordinator: CardListCoordinator) {
+        self.viewModel = viewModel
+        self.cardListcoordinator = cardListcoordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: - Setup
     
     func setupHierarchy() {
         view.addSubview(cardList)
@@ -39,33 +59,14 @@ class CardListViewController: UIViewController, ViewCode {
     }
     
     func setupView() {
-        view.backgroundColor = UIColor.background
-        cardList.backgroundColor = UIColor.background
-        setLargeTitleColor(UIColor.text)
-        navigationController?.navigationBar.tintColor = UIColor.main
-    }
-    
-    func setup() {
-        setupHierarchy()
-        setupConstraints()
-        setupDelegates()
-        setupView()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
-    }
-    
-    init(viewModel: CardListViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        view.backgroundColor = .background
+        cardList.backgroundColor = .background
+        setLargeTitleColor(.text)
+        setNavigationBarTintColor(.main)
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension CardListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,6 +82,8 @@ extension CardListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension CardListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

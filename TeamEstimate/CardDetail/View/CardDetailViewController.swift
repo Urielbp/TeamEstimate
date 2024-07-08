@@ -4,14 +4,15 @@
 //
 //  Created by Uriel Barbosa Pinheiro on 03/07/24.
 //
-
 import UIKit
 
 class CardDetailViewController: UIViewController, ViewCode {
     
-    weak var coordinator: CardDetailCoordinator?
+    // MARK: - Private properties
     
-    lazy var closeModalButton: UIButton = {
+    private weak var coordinator: CardDetailCoordinator?
+    
+    private lazy var closeModalButton: UIButton = {
         let v = UIButton(type: .close)
         v.translatesAutoresizingMaskIntoConstraints = false
         v.addTarget(self, action: #selector(close), for: .touchUpInside)
@@ -19,22 +20,14 @@ class CardDetailViewController: UIViewController, ViewCode {
         return v
     }()
     
-    @AutoLayoutView
-    var displayLabel: UILabel = {
-        let v = UILabel(frame: .zero)
-        v.font = UIFont.systemFont(ofSize: 64)
-        
-        return v
-    }()
-    
-    lazy var frontCardView: UIView = {
+    private lazy var frontCardView: UIView = {
         let v = UIView(frame: .zero)
         v.translatesAutoresizingMaskIntoConstraints = false
         
         return v
     }()
     
-    lazy var backCardView: UIView = {
+    private lazy var backCardView: UIView = {
         let v = UIView(frame: .zero)
         v.isUserInteractionEnabled = true
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapCard))
@@ -46,24 +39,48 @@ class CardDetailViewController: UIViewController, ViewCode {
     }()
     
     @AutoLayoutView
-    var backCardTipLabel: UILabel = {
+    private var backCardTipLabel: UILabel = {
         let v = UILabel(frame: .zero)
         v.text = "Tap to show card"
         
         return v
     }()
     
-    @objc func close() {
-        dismiss(animated: true)
+    // MARK: - Internal properties
+    
+    @AutoLayoutView
+    var displayLabel: UILabel = {
+        let v = UILabel(frame: .zero)
+        v.font = UIFont.systemFont(ofSize: 64)
+        
+        return v
+    }()
+    
+    // MARK: - Lifecycle Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
     }
     
-    @objc func didTapCard() {
-        UIView.animate(withDuration: 0.3) {
-            self.backCardView.alpha = 0
-            self.frontCardView.alpha = 1
-        }
+    // MARK: - Initializers
+    
+    init(coordinator: CardDetailCoordinator) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        coordinator?.finish()
+    }
+    
+    // MARK: - Setup Methods
+    
+    // Internal
     func setupHierarchy() {
         frontCardView.addSubview(displayLabel)
         view.addSubview(backCardView)
@@ -104,18 +121,16 @@ class CardDetailViewController: UIViewController, ViewCode {
         frontCardView.alpha = 0
     }
     
-    func setup() {
-        setupHierarchy()
-        setupConstraints()
-        setupView()
+    // MARK: - Action Methods
+    
+    @objc private func close() {
+        dismiss(animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
-    }
-    
-    deinit {
-        coordinator?.finish()
+    @objc private func didTapCard() {
+        UIView.animate(withDuration: 0.3) {
+            self.backCardView.alpha = 0
+            self.frontCardView.alpha = 1
+        }
     }
 }

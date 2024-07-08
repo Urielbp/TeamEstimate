@@ -11,4 +11,8 @@ extension UIViewController {
     func setLargeTitleColor(_ color: UIColor) {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: color]
     }
+    
+    func setNavigationBarTintColor(_ color: UIColor) {
+        navigationController?.navigationBar.tintColor = color
+    }
 }

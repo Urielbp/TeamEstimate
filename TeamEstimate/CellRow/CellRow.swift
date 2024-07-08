@@ -8,16 +8,17 @@
 import UIKit
 
 class CellRow: UITableViewCell, ReuseIdentifier, ViewCode {
-    func setupHierarchy() {
-        contentView.addSubview(contentLabel)
-    }
     
-    func setupConstraints() {
-        NSLayoutConstraint.activate([
-            contentLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            contentLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-        ])
-    }
+    // MARK: - Internal Properties
+    
+    lazy var contentLabel: UILabel = {
+        let v = UILabel()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        
+        return v
+    }()
+    
+    // MARK: - Initializers
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,10 +30,16 @@ class CellRow: UITableViewCell, ReuseIdentifier, ViewCode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var contentLabel: UILabel = {
-        let v = UILabel()
-        v.translatesAutoresizingMaskIntoConstraints = false
-        
-        return v
-    }()
+    // MARK: - Setup Methods
+    
+    func setupHierarchy() {
+        contentView.addSubview(contentLabel)
+    }
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            contentLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            contentLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+        ])
+    }
 }

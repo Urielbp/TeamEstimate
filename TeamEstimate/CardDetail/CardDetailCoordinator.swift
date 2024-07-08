@@ -9,10 +9,17 @@ import UIKit
 
 class CardDetailCoordinator: Coordinator {
     
+    // MARK: - Internal Properties
+    
     var childCoordinators = [Coordinator]()
     weak var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
-    var text: String
+    
+    // MARK: - Private Properties
+    
+    private var text: String
+    
+    // MARK: - Initializer
     
     init(navigationController: UINavigationController,
          parentCoordinator: Coordinator,
@@ -22,9 +29,10 @@ class CardDetailCoordinator: Coordinator {
         self.text = text
     }
     
+    // MARK: - Coordinator
+    
     func start() {
-        let vc = CardDetailViewController()
-        vc.coordinator = self
+        let vc = CardDetailViewController(coordinator: self)
         vc.displayLabel.text = text
         navigationController.present(vc, animated: true)
     }

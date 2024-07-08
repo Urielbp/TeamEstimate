@@ -10,11 +10,23 @@ import UIKit
 protocol ViewCode {
     func setupHierarchy()
     func setupConstraints()
+    func setupView()
+    func setupDelegates()
 }
 
 extension ViewCode {
     func setup() {
         setupHierarchy()
         setupConstraints()
+        setupView()
+        setupDelegates()
+    }
+    
+    func setupView() {
+        
+    }
+    
+    func setupDelegates() {
+        
     }
 }
