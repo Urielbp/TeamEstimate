@@ -25,6 +25,7 @@
 		0833C46B2C377133004E13D0 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C46A2C377133004E13D0 /* CardListViewModel.swift */; };
 		08D30C312C370B8C0041ADA8 /* FibonacciGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D30C302C370B8C0041ADA8 /* FibonacciGameCoordinator.swift */; };
 		08D30C332C370C400041ADA8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D30C322C370C400041ADA8 /* Coordinator.swift */; };
+		08E9ED752C3C2CB60094F5E7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 08E9ED742C3C2CB60094F5E7 /* Localizable.xcstrings */; };
 		08FBCB052C35FECC00467AD8 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB042C35FECC00467AD8 /* ViewCode.swift */; };
 		08FBCB072C35FEE900467AD8 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB062C35FEE900467AD8 /* ReuseIdentifier.swift */; };
 		08FBCB0A2C3600CF00467AD8 /* CellRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FBCB092C3600CF00467AD8 /* CellRow.swift */; };
@@ -76,6 +77,8 @@
 		0833C46A2C377133004E13D0 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
 		08D30C302C370B8C0041ADA8 /* FibonacciGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciGameCoordinator.swift; sourceTree = "<group>"; };
 		08D30C322C370C400041ADA8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		08E9ED732C3C2B400094F5E7 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		08E9ED742C3C2CB60094F5E7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		08FBCB042C35FECC00467AD8 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		08FBCB062C35FEE900467AD8 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		08FBCB092C3600CF00467AD8 /* CellRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRow.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 				0833C4602C371F19004E13D0 /* MainCoordinator.swift */,
 				0805BC3C2C35F60F00DB9CBC /* SceneDelegate.swift */,
 				0805BC432C35F61000DB9CBC /* Assets.xcassets */,
+				08E9ED742C3C2CB60094F5E7 /* Localizable.xcstrings */,
 				0805BC452C35F61000DB9CBC /* LaunchScreen.storyboard */,
 				0805BC482C35F61000DB9CBC /* Info.plist */,
 			);
@@ -403,6 +407,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 0805BC2E2C35F60F00DB9CBC;
 			productRefGroup = 0805BC382C35F60F00DB9CBC /* Products */;
@@ -423,6 +428,7 @@
 			files = (
 				0805BC442C35F61000DB9CBC /* Assets.xcassets in Resources */,
 				0805BC472C35F61000DB9CBC /* Base in Resources */,
+				08E9ED752C3C2CB60094F5E7 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +515,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0805BC462C35F61000DB9CBC /* Base */,
+				08E9ED732C3C2B400094F5E7 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -521,6 +528,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -568,7 +576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -584,6 +592,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -625,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -649,7 +658,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -677,7 +686,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -700,7 +709,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GAQAM8PW76;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = arousal.bribe.TeamEstimateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -720,7 +729,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GAQAM8PW76;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = arousal.bribe.TeamEstimateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

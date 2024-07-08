@@ -18,9 +18,9 @@ class ModeSelectionViewModel {
         var description: String {
             switch self {
             case .tShirt:
-                return "T-Shirt"
+                return String(localized: "T-Shirt")
             case .fibonacci:
-                return "Fibonacci"
+                return String(localized: "Fibonacci")
             }
         }
     }

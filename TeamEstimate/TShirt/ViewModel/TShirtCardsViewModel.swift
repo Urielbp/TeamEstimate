@@ -9,6 +9,12 @@ import Foundation
 
 class TShirtCardsViewModel: CardListViewModel {
     lazy var cards: [String] = {
-        ["XS", "S", "M", "L", "XL"]
+        [
+            String(localized: "XS"),
+            String(localized: "S"),
+            String(localized: "M"),
+            String(localized: "L"),
+            String(localized: "XL")
+        ]
     }()
 }

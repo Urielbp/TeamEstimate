@@ -68,6 +68,7 @@ class ModeSelectionViewController: UIViewController, ViewCode {
         view.backgroundColor = UIColor.background
         modesList.backgroundColor = UIColor.background
         setLargeTitleColor(UIColor.text)
+        title = String(localized: "Game modes")
     }
 }
 

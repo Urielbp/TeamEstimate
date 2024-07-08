@@ -41,7 +41,7 @@ class CardDetailViewController: UIViewController, ViewCode {
     @AutoLayoutView
     private var backCardTipLabel: UILabel = {
         let v = UILabel(frame: .zero)
-        v.text = "Tap to show card"
+        v.text = String(localized: "Tap to show card")
         
         return v
     }()
