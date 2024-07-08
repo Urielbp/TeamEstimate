@@ -14,6 +14,8 @@ class CellRow: UITableViewCell, ReuseIdentifier, ViewCode {
     lazy var contentLabel: UILabel = {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
+        v.font = UIFont.preferredFont(forTextStyle: .body)
+        v.adjustsFontForContentSizeCategory = true
         
         return v
     }()

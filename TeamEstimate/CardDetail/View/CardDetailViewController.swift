@@ -41,6 +41,8 @@ class CardDetailViewController: UIViewController, ViewCode {
     @AutoLayoutView
     private var backCardTipLabel: UILabel = {
         let v = UILabel(frame: .zero)
+        v.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        v.adjustsFontForContentSizeCategory = true
         v.text = String(localized: "Tap to show card")
         
         return v
@@ -51,7 +53,8 @@ class CardDetailViewController: UIViewController, ViewCode {
     @AutoLayoutView
     var displayLabel: UILabel = {
         let v = UILabel(frame: .zero)
-        v.font = UIFont.systemFont(ofSize: 64)
+        v.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        v.adjustsFontForContentSizeCategory = true
         
         return v
     }()
