@@ -38,10 +38,18 @@ class ModeSelectionViewController: UIViewController, ViewCode {
         modesList.delegate = self
     }
     
+    func setupView() {
+        view.backgroundColor = UIColor.background
+        modesList.backgroundColor = UIColor.background
+        setLargeTitleColor(UIColor.text)
+        title = "Mode Selection"
+    }
+    
     func setup() {
         setupHierarchy()
         setupConstraints()
         setupDelegates()
+        setupView()
     }
     
     init(coordinator: MainCoordinator, viewModel: ModeSelectionViewModel) {
@@ -57,7 +65,6 @@ class ModeSelectionViewController: UIViewController, ViewCode {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        title = "Mode Selection"
     }
 }
 
@@ -68,7 +75,10 @@ extension ModeSelectionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellRow.reuseIdentifier) as? CellRow else { return UITableViewCell() }
-        cell.text.text = viewModel.modes[indexPath.row]
+        cell.contentLabel.text = viewModel.modes[indexPath.row]
+        cell.contentLabel.textColor = UIColor.text
+        cell.contentView.backgroundColor = UIColor.background
+        
         return cell
     }
 }

@@ -16,6 +16,8 @@
 		0805BC5E2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC5D2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift */; };
 		0805BC6B2C35F7C200DB9CBC /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0805BC6A2C35F7C200DB9CBC /* ModeSelectionViewController.swift */; };
 		080C0A972C3BE8F200414744 /* ModeSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C0A962C3BE8F200414744 /* ModeSelectionViewModel.swift */; };
+		080C0A9A2C3BF00E00414744 /* AutoLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C0A992C3BF00D00414744 /* AutoLayoutView.swift */; };
+		080C0A9C2C3BF03600414744 /* UIViewController+TitleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080C0A9B2C3BF03600414744 /* UIViewController+TitleColor.swift */; };
 		0833C4612C371F19004E13D0 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4602C371F19004E13D0 /* MainCoordinator.swift */; };
 		0833C4632C37540D004E13D0 /* TShirtGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4622C37540D004E13D0 /* TShirtGameCoordinator.swift */; };
 		0833C4662C375801004E13D0 /* CardDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0833C4652C375801004E13D0 /* CardDetailCoordinator.swift */; };
@@ -65,6 +67,8 @@
 		0805BC5D2C35F61100DB9CBC /* TeamEstimateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEstimateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0805BC6A2C35F7C200DB9CBC /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
 		080C0A962C3BE8F200414744 /* ModeSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewModel.swift; sourceTree = "<group>"; };
+		080C0A992C3BF00D00414744 /* AutoLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutView.swift; sourceTree = "<group>"; };
+		080C0A9B2C3BF03600414744 /* UIViewController+TitleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TitleColor.swift"; sourceTree = "<group>"; };
 		0833C4602C371F19004E13D0 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		0833C4622C37540D004E13D0 /* TShirtGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtGameCoordinator.swift; sourceTree = "<group>"; };
 		0833C4652C375801004E13D0 /* CardDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailCoordinator.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		0805BC392C35F60F00DB9CBC /* TeamEstimate */ = {
 			isa = PBXGroup;
 			children = (
+				080C0A982C3BF00200414744 /* Extensions */,
 				08D30C2F2C370B470041ADA8 /* CellRow */,
 				08FBCB162C3632C800467AD8 /* CardList */,
 				08FBCB152C3632BC00467AD8 /* CardDetail */,
@@ -171,6 +176,15 @@
 				080C0A962C3BE8F200414744 /* ModeSelectionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		080C0A982C3BF00200414744 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				080C0A992C3BF00D00414744 /* AutoLayoutView.swift */,
+				080C0A9B2C3BF03600414744 /* UIViewController+TitleColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0833C4642C3757D0004E13D0 /* View */ = {
@@ -444,12 +458,14 @@
 				0833C4662C375801004E13D0 /* CardDetailCoordinator.swift in Sources */,
 				08FBCB0A2C3600CF00467AD8 /* CellRow.swift in Sources */,
 				080C0A972C3BE8F200414744 /* ModeSelectionViewModel.swift in Sources */,
+				080C0A9C2C3BF03600414744 /* UIViewController+TitleColor.swift in Sources */,
 				0833C4682C376596004E13D0 /* CardListCoordinator.swift in Sources */,
 				08FBCB052C35FECC00467AD8 /* ViewCode.swift in Sources */,
 				0805BC3B2C35F60F00DB9CBC /* AppDelegate.swift in Sources */,
 				0833C46B2C377133004E13D0 /* CardListViewModel.swift in Sources */,
 				0805BC3D2C35F60F00DB9CBC /* SceneDelegate.swift in Sources */,
 				08FBCB1A2C3636E700467AD8 /* FibonacciCardsViewModel.swift in Sources */,
+				080C0A9A2C3BF00E00414744 /* AutoLayoutView.swift in Sources */,
 				08D30C312C370B8C0041ADA8 /* FibonacciGameCoordinator.swift in Sources */,
 				0833C4612C371F19004E13D0 /* MainCoordinator.swift in Sources */,
 				08FBCB1C2C36385900467AD8 /* TShirtCardsViewModel.swift in Sources */,

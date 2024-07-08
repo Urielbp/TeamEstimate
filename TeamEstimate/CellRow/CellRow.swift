@@ -9,13 +9,13 @@ import UIKit
 
 class CellRow: UITableViewCell, ReuseIdentifier, ViewCode {
     func setupHierarchy() {
-        contentView.addSubview(text)
+        contentView.addSubview(contentLabel)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            text.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            text.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            contentLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            contentLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
     }
     
@@ -29,7 +29,7 @@ class CellRow: UITableViewCell, ReuseIdentifier, ViewCode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var text: UILabel = {
+    lazy var contentLabel: UILabel = {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
         

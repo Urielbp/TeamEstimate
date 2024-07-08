@@ -35,13 +35,13 @@ extension MainCoordinator {
         }
     }
     
-    func startFibonacci() {
+    private func startFibonacci() {
         let coordinator = FibonacciGameCoordinator(navigationController: navigationController, parentCoordinator: self)
         childCoordinators.append(coordinator)
         coordinator.start()
     }
     
-    func startTShirt() {
+    private func startTShirt() {
         let coordinator = TShirtGameCoordinator(navigationController: navigationController, parentCoordinator: self)
         childCoordinators.append(coordinator)
         coordinator.start()

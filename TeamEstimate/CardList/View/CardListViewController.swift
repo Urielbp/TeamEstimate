@@ -24,11 +24,6 @@ class CardListViewController: UIViewController, ViewCode {
         view.addSubview(cardList)
     }
     
-    func setupDelegates() {
-        cardList.dataSource = self
-        cardList.delegate = self
-    }
-    
     func setupConstraints() {
         NSLayoutConstraint.activate([
             cardList.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -38,10 +33,23 @@ class CardListViewController: UIViewController, ViewCode {
         ])
     }
     
+    func setupDelegates() {
+        cardList.dataSource = self
+        cardList.delegate = self
+    }
+    
+    func setupView() {
+        view.backgroundColor = UIColor.background
+        cardList.backgroundColor = UIColor.background
+        setLargeTitleColor(UIColor.text)
+        navigationController?.navigationBar.tintColor = UIColor.main
+    }
+    
     func setup() {
         setupHierarchy()
         setupConstraints()
         setupDelegates()
+        setupView()
     }
     
     override func viewDidLoad() {
@@ -66,7 +74,10 @@ extension CardListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellRow.reuseIdentifier) as? CellRow else { return UITableViewCell() }
-        cell.text.text = viewModel.cards[indexPath.row]
+        cell.contentLabel.text = viewModel.cards[indexPath.row]
+        cell.contentLabel.textColor = UIColor.text
+        cell.contentView.backgroundColor = UIColor.background
+        
         return cell
     }
 }
